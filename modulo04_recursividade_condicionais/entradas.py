@@ -2,34 +2,36 @@ def main():
     pass
 
 def getInt(entrada): 
-    inteiro = int(input(entrada))
+    numero = input(entrada)
     
-    return inteiro
+    try:
+        inteiro = int(numero)
+        return inteiro
+    except ValueError:
+        print('Valor Inválido!')
+        return getInt(entrada)
 
 
 def getFloat(entrada):
-    numFloat = float(input(entrada))
+    numero = input(entrada)
 
-    return numFloat
-
-
-def getNumberInRange(entrada, min, max):
-    num = getFloat(entrada)
-
-    if num < min or num > max :
-        num = getNumberInRange(entrada, min, max)
-    
-    return num
+    try:
+        real = float(numero)
+        return real
+    except ValueError:
+        print('Valor Inválido!')
+        return getFloat(entrada)
 
 
 def getIntInRange(entrada, min, max):
-    num = getInt(entrada)
+    numero = getInt(entrada)
 
-    if (num < min or num > max) or (num % 1 != 0)  :
-        print('Número inválido!')
-        num = getNumberInRange(entrada, min, max)
-    
-    return num
+    if numero < min or numero > max :
+        print('Valor Inválido!')
+        return getIntInRange(entrada, min, max)
+    else: 
+        return numero
+
 
 def getNumberMin(entrada, min):
     num = getFloat(entrada)
@@ -42,7 +44,8 @@ def getNumberMin(entrada, min):
 def getNumberFloor(entrada, min):
     num = getFloat(entrada)
     if num <= min :
-        num = getNumberMin(entrada, min)
+        print('Número inválido')
+        num = getNumberFloor(entrada, min)
     
     return num
 
