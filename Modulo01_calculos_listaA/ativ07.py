@@ -3,10 +3,10 @@
 
 #Entrada
 comprimento = int(input('Comprimento: '))
-largura = int(input('Largura: '))
+altura = int(input('Largura: '))
 
 #Processamento
-latas = comprimento/largura
+latas = comprimento/altura
 
 #Saida
 print(f'{latas} Latas de tinta')

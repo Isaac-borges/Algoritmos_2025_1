@@ -1,0 +1,2 @@
+def getNumber(entrada):
+    pass

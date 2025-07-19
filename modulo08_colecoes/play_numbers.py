@@ -186,8 +186,6 @@ def adicionarValores(colecao) :
 
     return vetor
 
-
-
 def salvarVetor(vetor, nomearquivo) :
     with open(nomearquivo, 'w') as arquivo :
         for numero in vetor :
